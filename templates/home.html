@@ -1,6 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
 <style>
+    body {
+        background-color: #F7F7FC;
+    }
+
     .center-screen {
         display: flex;
         flex-direction: column;
@@ -10,13 +14,12 @@
         min-height: 100vh;
     }
 
-
     .subjects_formatter {
         border-style: ridge;
         padding: 200px;
         margin: 20px;
+        background-color: white;
     }
-
 
     .header_formatter {
         font-size: 50px;
@@ -31,59 +34,34 @@
         font-style: inherit;
     }
 
-    button {
+
+    input[type=submit] {
         color: #444444;
-        background: #F3F3F3;
-        border: 1px #F3F3F3 solid;
+        background: #F7FAFF;
+        border: 1px silver solid;
         padding: 50px 50px;
         border-radius: 20px;
         font-weight: bold;
         font-size: 20px;
         outline: none;
         display: inline-block;
-        margin: 10px;
-        height: 200px;
-        width: 200px;
+        margin: 20px;
+        height: 250px;
+        width: 275px;
         text-align: center;
     }
 
-    button:hover {
-        border: 1px #C6C6C6 solid;
+    input[type=submit]:hover {
+        border: 1px black solid;
         box-shadow: 1px 1px 1px #EAEAEA;
         color: #333333;
-        background: #F7F7F7;
+        background: white;
     }
 
-    input[type=button] {
-        color: #444444;
-        background: #F3F3F3;
-        border: 1px #F3F3F3 solid;
-        padding: 50px 50px;
-        border-radius: 20px;
-        font-weight: bold;
-        font-size: 20px;
-        outline: none;
-        display: inline-block;
-        margin: 10px;
-        height: 200px;
-        width: 200px;
-        text-align: center;
-    }
-
-    input[type=button]:hover {
-        border: 1px #C6C6C6 solid;
-        box-shadow: 1px 1px 1px #EAEAEA;
-        color: #333333;
-        background: #F7F7F7;
-    }
-
-    input[type=button]:active {
+    input[type=submit]:active {
         box-shadow: inset 1px 1px 1px #DFDFDF;
     }
 
-    button:active {
-        box-shadow: inset 1px 1px 1px #DFDFDF;
-    }
 </style>
 <head>
     <meta charset="UTF-8">
@@ -103,62 +81,37 @@
     <div id="subjects_container">
 
 
-        <div id="math_container" class="subjects_formatter">
+        <div id="math_container" class="subjects_formatter" style="background-color: -moz-mac-chrome-active">
             <p id="math_header_container" class="subjects_header_formatter">
                 Math Header
             </p>
-            <form method="POST" action="/math_submit">
-                <label id="calc_1" class="button" style="float: left;">
-                    <input type="button" value="Calculus I">
-                </label>
-                <label id="calc_2" class="button" style="float: inherit;">
-                    <input type="button" value="Calculus II">
-                </label>
-                <label id="calc_3" class="button" style="float: right;">
-                    <input type="button" value="Calculus III">
-                </label>
+            <form action="/math_submit" method="POST">
+                <input type="submit" value="Calculus I" id="calc_1" style="float:left;">
+                <input type="submit" value="Calculus II" id="calc_2" style="float:inherit;">
+                <input type="submit" value="Calculus III" id="calc_3" style="float:right;">
                 <br>
-                <label id="diffeq" class="button" style="float: left;">
-                    <input type="button" value="DiffEQ">
-                </label>
-                <label id="linear_algebra" class="button" style="float: inherit;">
-                    <input type="button" value="Linear Algebra">
-                </label>
-                <label id="vector_calc" class="button" style="float: right;">
-                    <input type="button" value="Vector Calculus">
-                </label>
+                <input type="submit" value="DiffEQ" id="diff_eq" style="float:left;">
+                <input type="submit" value="Linear Algebra" id="linear_algebra" style="float:inherit;">
+                <input type="submit" value="Vector Calculus" id="vector_calculus" style="float:right;">
             </form>
 
         </div>
 
         <div id="physics_container" class="subjects_formatter">
             <p id="physics_header_container" class="subjects_header_formatter">
-
                 Physics Header
             </p>
-
-            <button class="button" style="float:left;;">
-                Physics I
-            </button>
-            <button class="button" style="float: inherit;">
-                Physics II
-            </button>
-            <button class="button" style="float: right">
-                Physics III
-            </button>
-            <br>
-            <button class="button" style="float: left">
-                Classical Mechanics
-            </button>
-            <button class="button" style="float: inherit;">
-                Quantum Mechanics
-            </button>
-            <button class="button" style="float: right;">
-                Modern Physics
-            </button>
+            <form method="POST" action="/physics_submit">
+                <input type="submit" value="Physics I" id="phys_1" style="float:left;">
+                <input type="submit" value="Physics II" id="phys_2" style="float:inherit;">
+                <input type="submit" value="Physics III" id="phys_3" style="float:right;">
+                <br>
+                <input type="submit" value="Quantum Mechanics" id="quantum_mechanics" style="float:left;">
+                <input type="submit" value="Classical Mechanics" id="classical_mechanics" style="float:inherit;">
+                <input type="submit" value="Modern Physics" id="modern_physics" style="float:right;">
+            </form>
 
         </div>
-
 
     </div>
 
