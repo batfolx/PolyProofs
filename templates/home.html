@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<style>
+    .center-screen {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        min-height: 100vh;
+    }
+
+
+    .subjects_formatter {
+        border-style: ridge;
+        padding: 200px;
+        margin: 20px;
+    }
+
+
+    .header_formatter {
+        font-size: 50px;
+        font-style: oblique;
+    }
+
+    .subjects_header_formatter {
+        text-align: center;
+        position: relative;
+        bottom: 200px;
+        font-size: 25px;
+        font-style: inherit;
+    }
+
+    button {
+        color: #444444;
+        background: #F3F3F3;
+        border: 1px #F3F3F3 solid;
+        padding: 50px 50px;
+        border-radius: 20px;
+        font-weight: bold;
+        font-size: 20px;
+        outline: none;
+        display: inline-block;
+        margin: 10px;
+        height: 200px;
+        width: 200px;
+        text-align: center;
+    }
+
+    button:hover {
+        border: 1px #C6C6C6 solid;
+        box-shadow: 1px 1px 1px #EAEAEA;
+        color: #333333;
+        background: #F7F7F7;
+    }
+
+    input[type=button] {
+        color: #444444;
+        background: #F3F3F3;
+        border: 1px #F3F3F3 solid;
+        padding: 50px 50px;
+        border-radius: 20px;
+        font-weight: bold;
+        font-size: 20px;
+        outline: none;
+        display: inline-block;
+        margin: 10px;
+        height: 200px;
+        width: 200px;
+        text-align: center;
+    }
+
+    input[type=button]:hover {
+        border: 1px #C6C6C6 solid;
+        box-shadow: 1px 1px 1px #EAEAEA;
+        color: #333333;
+        background: #F7F7F7;
+    }
+
+    input[type=button]:active {
+        box-shadow: inset 1px 1px 1px #DFDFDF;
+    }
+
+    button:active {
+        box-shadow: inset 1px 1px 1px #DFDFDF;
+    }
+</style>
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="content_container" class="center-screen">
+
+    <div id="header_container" class="header_formatter">
+
+
+        Poly Proofs
+
+
+    </div>
+
+    <div id="subjects_container">
+
+
+        <div id="math_container" class="subjects_formatter">
+            <p id="math_header_container" class="subjects_header_formatter">
+                Math Header
+            </p>
+            <form method="POST" action="/math_submit">
+                <label id="calc_1" class="button" style="float: left;">
+                    <input type="button" value="Calculus I">
+                </label>
+                <label id="calc_2" class="button" style="float: inherit;">
+                    <input type="button" value="Calculus II">
+                </label>
+                <label id="calc_3" class="button" style="float: right;">
+                    <input type="button" value="Calculus III">
+                </label>
+                <br>
+                <label id="diffeq" class="button" style="float: left;">
+                    <input type="button" value="DiffEQ">
+                </label>
+                <label id="linear_algebra" class="button" style="float: inherit;">
+                    <input type="button" value="Linear Algebra">
+                </label>
+                <label id="vector_calc" class="button" style="float: right;">
+                    <input type="button" value="Vector Calculus">
+                </label>
+            </form>
+
+        </div>
+
+        <div id="physics_container" class="subjects_formatter">
+            <p id="physics_header_container" class="subjects_header_formatter">
+
+                Physics Header
+            </p>
+
+            <button class="button" style="float:left;;">
+                Physics I
+            </button>
+            <button class="button" style="float: inherit;">
+                Physics II
+            </button>
+            <button class="button" style="float: right">
+                Physics III
+            </button>
+            <br>
+            <button class="button" style="float: left">
+                Classical Mechanics
+            </button>
+            <button class="button" style="float: inherit;">
+                Quantum Mechanics
+            </button>
+            <button class="button" style="float: right;">
+                Modern Physics
+            </button>
+
+        </div>
+
+
+    </div>
+
+
+</div>
+
+
+</body>
+</html>
