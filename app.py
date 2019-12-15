@@ -21,7 +21,8 @@ def math_handler():
         button_clicked = item
         break
 
-    return render_template('math_submit.html', topic=button_clicked[1], proofs=_get_math_proofs())
+    math_concept = button_clicked[0]
+    return render_template('math_submit.html', topic=button_clicked[1], proofs=_get_math_proofs(math_concept))
 
 
 @app.route('/physics_submit', methods=['POST'])
