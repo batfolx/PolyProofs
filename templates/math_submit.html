@@ -77,14 +77,14 @@
         border: 1px black solid;
         box-shadow: 1px 1px 1px #EAEAEA;
         color: #333333;
-        background-size:contain;
+        background-size: contain;
 
     }
 
     input[type=submit]:active {
         box-shadow: inset 1px 1px 1px #DFDFDF;
-        background-size:contain;
         background: white;
+        background-size: contain;
     }
 
 </style>
@@ -104,21 +104,25 @@
     </div>
 
     <div id="proofs_container" class="proof_container_formatter">
-        {% for i in range(0, (proofs|length), 3) %}
-            <br>
+        {% for i in range(proofs|length) %}
             {% if i % 3 == 0 %}
+                <input type="submit" value="{{ proofs[i]['proof_name'] }}" id="{{ proofs[i]['proof_name'] }}"
+                       name="{{ proofs[i]['proof_name'] }}"
+                       style="float: left; background-image: url('{{ proofs[i]['src'] }}')"
+                >
+            {% endif %}
+            {% if i % 3 == 1 %}
+                <input type="submit" value="{{ proofs[i]['proof_name'] }}" id="{{ proofs[i]['proof_name'] }}"
+                       name="{{ proofs[i]['proof_name'] }}"
+                       style="float: inherit; background-image: url('{{ proofs[i]['src'] }}')">
 
             {% endif %}
-            <input type="submit" value="{{ proofs[i] }}" id="{{ proofs[i] }}" name="{{ proofs[i] }}"
-                   style="float: left; background-image: url('/static/reimann_sum.png')"
-
-            >
-
-            <input type="submit" value="{{ proofs[i + 1] }}" id="{{ proofs[i + 1] }}" name="{{ proofs[i + 1] }}"
-                   style="float: inherit; background-image: url('/static/reimann_sum.png')">
-            <input type="submit" value="{{ proofs[i + 2] }}" id="{{ proofs[i + 2] }}" name="{{ proofs[i + 2] }}"
-                   style="float: right; background-image: url('/static/reimann_sum.png')">
-
+            {% if i % 3 == 2 %}
+                <input type="submit" value="{{ proofs[i]['proof_name'] }}" id="{{ proofs[i]['proof_name'] }}"
+                       name="{{ proofs[i]['proof_name'] }}"
+                       style="float: right; background-image: url('{{ proofs[i]['src'] }}')">
+                <br>
+            {% endif %}
 
         {% endfor %}
 

@@ -1,5 +1,5 @@
 from flask import Flask, render_template, request
-from utils import _get_math_proofs
+from utils import get_math_proofs
 
 app = Flask(__name__)
 
@@ -22,7 +22,7 @@ def math_handler():
         break
 
     math_concept = button_clicked[0]
-    return render_template('math_submit.html', topic=button_clicked[1], proofs=_get_math_proofs(math_concept))
+    return render_template('math_submit.html', topic=button_clicked[1], proofs=get_math_proofs(math_concept))
 
 
 @app.route('/physics_submit', methods=['POST'])
