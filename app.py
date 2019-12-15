@@ -1,4 +1,5 @@
 from flask import Flask, render_template, request
+from utils import _get_math_proofs
 
 app = Flask(__name__)
 
@@ -15,8 +16,23 @@ def math_handler():
     This function handles the Math clicked input.
     :return: The math_html page template for the website.
     """
+    button_clicked = ''
+    for item in request.form.items():
+        button_clicked = item
+        break
+
+    return render_template('math_submit.html', topic=button_clicked[1], proofs=_get_math_proofs())
+
+
+@app.route('/physics_submit', methods=['POST'])
+def physics_handler():
+    button_clicked = ''
     print(request.form)
-    return render_template('math_submit.html')
+    for item in request.form.items():
+        button_clicked = item
+        break
+
+    return render_template('physics_submit.html')
 
 
 if __name__ == '__main__':

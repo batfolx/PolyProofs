@@ -1,12 +1,133 @@
 <!DOCTYPE html>
 <html lang="en">
+
+<style>
+
+    body {
+        background-color: #F7F7FC;
+    }
+
+    .center-screen {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        min-height: 100vh;
+    }
+
+    .proof_container_formatter {
+
+        border-style: ridge;
+        padding: 200px;
+        margin: 20px;
+        background-color: white;
+        text-align: center;
+
+
+    }
+
+    input[type=image] {
+        color: #444444;
+        background: #F7FAFF;
+        border: 1px silver solid;
+        padding: 50px 50px;
+        border-radius: 20px;
+        font-weight: bold;
+        font-size: 20px;
+        outline: none;
+        display: inline-block;
+        margin: 20px;
+        height: 250px;
+        width: 275px;
+        text-align: inherit;
+    }
+
+    input[type=image]:hover {
+        border: 1px black solid;
+        box-shadow: 1px 1px 1px #EAEAEA;
+        color: #333333;
+        background: white;
+    }
+
+    input[type=image]:active {
+        box-shadow: inset 1px 1px 1px #DFDFDF;
+    }
+
+    input[type=submit] {
+        color: #444444;
+        background: #F7FAFF;
+        border: 1px silver solid;
+        padding: 50px 50px;
+        border-radius: 20px;
+        font-weight: bold;
+        font-size: 20px;
+        outline: none;
+        display: inline-block;
+        margin: 20px;
+        height: 250px;
+        width: 275px;
+        text-align: center;
+    }
+
+    input[type=submit]:hover {
+        border: 1px black solid;
+        box-shadow: 1px 1px 1px #EAEAEA;
+        color: #333333;
+        background: white;
+    }
+
+    input[type=submit]:active {
+        box-shadow: inset 1px 1px 1px #DFDFDF;
+    }
+
+    .align_labels {
+        text-align: right;
+        font-style: oblique;
+        font-size: 10px;
+    }
+
+</style>
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
 </head>
 <body>
 
-You have clicked on the MATH ROUTE!
+<div id="container" class="center-screen">
+    <p style="font-size: 40px; font-style: oblique; text-align: center" class="header_formatter">
+        Poly Proofs
+
+    </p>
+    <div id="header" style="text-align: center; font-size: 30px">
+        Currently displaying {{ topic }} proofs
+
+    </div>
+
+    <div id="proofs_container" class="proof_container_formatter">
+        {% for i in range(0, (proofs|length), 3) %}
+            <br>
+            {% if i % 3 == 0 %}
+
+            {% endif %}
+            <input type="submit" value="{{ proofs[i] }}" id="{{ proofs[i] }}" name="{{ proofs[i] }}"
+                   style="float: left;)"
+                   alt="{{ proofs[i] }}"
+                   >
+
+            <input type="submit" value="{{ proofs[i + 1] }}" id="{{ proofs[i + 1] }}" name="{{ proofs[i + 1] }}"
+                   style="float: inherit">
+            <input type="submit" value="{{ proofs[i + 2] }}" id="{{ proofs[i + 2] }}" name="{{ proofs[i + 2] }}"
+                   style="float: right"">
+
+
+        {% endfor %}
+
+    </div>
+
+
+</div>
+
 
 </body>
 </html>

@@ -1,73 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
-<style>
-    body {
-        background-color: #F7F7FC;
-    }
 
-    .center-screen {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        text-align: center;
-        min-height: 100vh;
-    }
-
-    .subjects_formatter {
-        border-style: ridge;
-        padding: 200px;
-        margin: 20px;
-        background-color: white;
-    }
-
-    .header_formatter {
-        font-size: 50px;
-        font-style: oblique;
-    }
-
-    .subjects_header_formatter {
-        text-align: center;
-        position: relative;
-        bottom: 200px;
-        font-size: 25px;
-        font-style: inherit;
-    }
-
-
-    input[type=submit] {
-        color: #444444;
-        background: #F7FAFF;
-        border: 1px silver solid;
-        padding: 50px 50px;
-        border-radius: 20px;
-        font-weight: bold;
-        font-size: 20px;
-        outline: none;
-        display: inline-block;
-        margin: 20px;
-        height: 250px;
-        width: 275px;
-        text-align: center;
-    }
-
-    input[type=submit]:hover {
-        border: 1px black solid;
-        box-shadow: 1px 1px 1px #EAEAEA;
-        color: #333333;
-        background: white;
-    }
-
-    input[type=submit]:active {
-        box-shadow: inset 1px 1px 1px #DFDFDF;
-    }
-
-</style>
 <head>
     <meta charset="UTF-8">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
     <title>Title</title>
 </head>
 <body>
+
 <div id="content_container" class="center-screen">
 
     <div id="header_container" class="header_formatter">
@@ -86,13 +26,13 @@
                 Math Header
             </p>
             <form action="/math_submit" method="POST">
-                <input type="submit" value="Calculus I" id="calc_1" style="float:left;">
-                <input type="submit" value="Calculus II" id="calc_2" style="float:inherit;">
-                <input type="submit" value="Calculus III" id="calc_3" style="float:right;">
+                <input type="submit" value="Calculus I" name="calc_1" style="float:left;">
+                <input type="submit" value="Calculus II" name="calc_2" style="float:inherit;">
+                <input type="submit" value="Calculus III" name="calc_3" style="float:right;">
                 <br>
-                <input type="submit" value="DiffEQ" id="diff_eq" style="float:left;">
-                <input type="submit" value="Linear Algebra" id="linear_algebra" style="float:inherit;">
-                <input type="submit" value="Vector Calculus" id="vector_calculus" style="float:right;">
+                <input type="submit" value="DiffEQ" name="diff_eq" style="float:left;">
+                <input type="submit" value="Linear Algebra" name="linear_algebra" style="float:inherit;">
+                <input type="submit" value="Vector Calculus" name="vector_calculus" style="float:right;">
             </form>
 
         </div>
@@ -101,14 +41,14 @@
             <p id="physics_header_container" class="subjects_header_formatter">
                 Physics Header
             </p>
-            <form method="POST" action="/physics_submit">
-                <input type="submit" value="Physics I" id="phys_1" style="float:left;">
-                <input type="submit" value="Physics II" id="phys_2" style="float:inherit;">
-                <input type="submit" value="Physics III" id="phys_3" style="float:right;">
+            <form action="/physics_submit" method="POST">
+                <input type="submit" value="Physics I" name="phys_1" style="float:left;">
+                <input type="submit" value="Physics II" name="phys_2" style="float:inherit;">
+                <input type="submit" value="Physics III" name="phys_3" style="float:right;">
                 <br>
-                <input type="submit" value="Quantum Mechanics" id="quantum_mechanics" style="float:left;">
-                <input type="submit" value="Classical Mechanics" id="classical_mechanics" style="float:inherit;">
-                <input type="submit" value="Modern Physics" id="modern_physics" style="float:right;">
+                <input type="submit" value="Quantum Mechanics" name="quantum_mechanics" style="float:left;">
+                <input type="submit" value="Classical Mechanics" name="classical_mechanics" style="float:inherit;">
+                <input type="submit" value="Modern Physics" name="modern_physics" style="float:right;">
             </form>
 
         </div>
