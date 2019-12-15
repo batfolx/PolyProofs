@@ -41,6 +41,7 @@
         height: 250px;
         width: 275px;
         text-align: inherit;
+
     }
 
     input[type=image]:hover {
@@ -68,23 +69,22 @@
         height: 250px;
         width: 275px;
         text-align: center;
+        background-size: 10px 10px;
+
     }
 
     input[type=submit]:hover {
         border: 1px black solid;
         box-shadow: 1px 1px 1px #EAEAEA;
         color: #333333;
-        background: white;
+        background-size:contain;
+
     }
 
     input[type=submit]:active {
         box-shadow: inset 1px 1px 1px #DFDFDF;
-    }
-
-    .align_labels {
-        text-align: right;
-        font-style: oblique;
-        font-size: 10px;
+        background-size:contain;
+        background: white;
     }
 
 </style>
@@ -111,14 +111,14 @@
 
             {% endif %}
             <input type="submit" value="{{ proofs[i] }}" id="{{ proofs[i] }}" name="{{ proofs[i] }}"
-                   style="float: left;)"
-                   alt="{{ proofs[i] }}"
-                   >
+                   style="float: left; background-image: url('/static/reimann_sum.png')"
+
+            >
 
             <input type="submit" value="{{ proofs[i + 1] }}" id="{{ proofs[i + 1] }}" name="{{ proofs[i + 1] }}"
-                   style="float: inherit">
+                   style="float: inherit; background-image: url('/static/reimann_sum.png')">
             <input type="submit" value="{{ proofs[i + 2] }}" id="{{ proofs[i + 2] }}" name="{{ proofs[i + 2] }}"
-                   style="float: right"">
+                   style="float: right; background-image: url('/static/reimann_sum.png')">
 
 
         {% endfor %}
